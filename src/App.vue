@@ -8,24 +8,44 @@
           class="form-control w-25"
           placeholder="Search..."
           aria-label="search"
+          v-model.trim="search"
         />
       </div>
-      <div class="container options-container">
-        <div class="card" style="width: 18rem;">
-          <img src="https://t3.ftcdn.net/jpg/04/83/90/18/240_F_483901821_46VsNR67uJC3xIKQN4aaxR6GtAZhx9G8.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Math</h5>
-            <p class="card-text">15 Questions</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+        <Card :quizzes="quizzes" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import q from './data/data.json';
+import Card from './components/Card.vue'
+
+export default {
+  name: 'stem-quizzes',
+  data() {
+    return {
+      quizzes: [], // Initialize as an empty array
+      originalQuizzes: [], // Store the original data separately
+      search: ''
+    };
+  },
+  components: {
+    Card
+  },
+  mounted() {
+    // Copy the quiz data from the imported JSON file to quizzes and originalQuizzes
+    this.quizzes = [...q];
+    this.originalQuizzes = [...q];
+  },
+  watch: {
+    search(newSearchTerm) {
+      // Filter from the original data stored in originalQuizzes
+      this.quizzes = this.originalQuizzes.filter((quiz) => {
+        return quiz.name.toLowerCase().includes(newSearchTerm.toLowerCase());
+      });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>
