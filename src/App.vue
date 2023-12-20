@@ -1,5 +1,19 @@
 <template>
   <div>
+    <RouterView />
+  </div>
+</template>
+
+<script setup>
+ import {RouterView} from "vue-router"
+</script>
+
+<style lang="scss" scoped>
+
+</style>
+
+<!-- <template>
+  <div>
     <div class="container">
       <div class="header my-3 d-flex">
         <h1 class="fw-bold me-5">Quizzes</h1>
@@ -48,4 +62,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped></style> -->
