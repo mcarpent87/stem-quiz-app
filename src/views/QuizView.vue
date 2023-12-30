@@ -3,7 +3,7 @@ import Question from "../components/Question.vue";
 import Header from "../components/Header.vue";
 //import Result from "../components/Result.vue";
 import { useRoute } from "vue-router";
-import { ref, computed, watch } from "vue";
+import { ref, computed } from "vue";
 import q from "../data/data.json";
 
 const route = useRoute();
@@ -13,23 +13,12 @@ const currentQuestionIndex = ref(0);
 const numberOfCorrectAnswers = ref(0);
 const showResults = ref(false);
 
-const questionStatus = ref(
-  `${currentQuestionIndex.value}/${quiz.questions.length}`
+const questionStatus = computed(
+  () => `${currentQuestionIndex.value}/${quiz.questions.length}`
 );
-
-watch(
-  () => currentQuestionIndex.value,
-  () => {
-    questionStatus.value = `${currentQuestionIndex.value}/${quiz.questions.length}`;
-  }
+const barPercentage = computed(
+  () => `${(currentQuestionIndex.value / quiz.questions.length) * 100}%`
 );
-
-// const questionStatus = computed(
-//   () => `${currentQuestionIndex.value}/${quiz.questions.length}`
-// );
-// const barPercentage = computed(
-//   () => `${(currentQuestionIndex.value / quiz.questions.length) * 100}%`
-// );
 
 const onOptionSelected = (isCorrect) => {
   if (isCorrect) {
