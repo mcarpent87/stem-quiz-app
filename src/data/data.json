@@ -303,7 +303,7 @@
                         "id": 1,
                         "label": "A",
                         "text": "10-15 thousand years ago",
-                        "isCorrect": true
+                        "isCorrect": false
                     },
                     {
                         "id": 2,
@@ -321,7 +321,7 @@
                         "id": 4,
                         "label": "D",
                         "text": "10-15 billion years ago",
-                        "isCorrect": false
+                        "isCorrect": true
                     }
                 ]
             },
@@ -333,7 +333,7 @@
                         "id": 1,
                         "label": "A",
                         "text": "Igneous",
-                        "isCorrect": false
+                        "isCorrect": true
                     },
                     {
                         "id": 2,
@@ -351,7 +351,7 @@
                         "id": 4,
                         "label": "D",
                         "text": "Metamorphic",
-                        "isCorrect": true
+                        "isCorrect": false
                     }
                 ]
             },
@@ -363,13 +363,13 @@
                         "id": 1,
                         "label": "A",
                         "text": "Silicon",
-                        "isCorrect": false
+                        "isCorrect": true
                     },
                     {
                         "id": 2,
                         "label": "B",
                         "text": "Carbon",
-                        "isCorrect": true
+                        "isCorrect": false
                     },
                     {
                         "id": 3,
@@ -399,13 +399,13 @@
                         "id": 2,
                         "label": "B",
                         "text": "Lithosphere",
-                        "isCorrect": true
+                        "isCorrect": false
                     },
                     {
                         "id": 3,
                         "label": "C",
                         "text": "Mantle",
-                        "isCorrect": false
+                        "isCorrect": true
                     },
                     {
                         "id": 4,

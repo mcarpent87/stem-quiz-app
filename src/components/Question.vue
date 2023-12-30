@@ -5,7 +5,7 @@
         {{ question.text }}
       </h5>
     </div>
-    <div class="options-container">
+    <div class="options-container w-50">
       <div
         v-for="option in question.options"
         :key="option.id"
@@ -50,7 +50,7 @@ const emitSelectedOption = (isCorrect) => {
 }
 
 .option-label {
-  background-color: bisque;
+  background-color: lightblue;
   width: 50px;
   height: 50px;
   font-size: 30px;

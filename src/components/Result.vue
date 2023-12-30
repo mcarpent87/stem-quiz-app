@@ -1,9 +1,35 @@
 <template>
-  <div>
-    <h1>Results</h1>
+  <div class="results">
+    <p class="fw-bold">Your Score:</p>
+    <h1>
+      {{ numberOfCorrectAnswers }}/{{ quizQuestionLength }} = {{ quizPercent }}%
+    </h1>
+    <RouterLink to="/" class="btn btn-primary mt-4">Home</RouterLink>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+import { RouterLink } from "vue-router";
 
-<style lang="scss" scoped></style>
+const { quizQuestionLength, numberOfCorrectAnswers } = defineProps([
+  "quizQuestionLength",
+  "numberOfCorrectAnswers",
+]);
+
+const quizPercent = (
+  (numberOfCorrectAnswers / quizQuestionLength) *
+  100
+).toFixed(1);
+</script>
+
+<style scoped>
+.results {
+  text-align: center;
+  padding: 100px 0;
+}
+
+p {
+  font-size: 25px;
+}
+</style>

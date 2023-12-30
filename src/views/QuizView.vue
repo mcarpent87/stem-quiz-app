@@ -1,7 +1,7 @@
 <script setup>
 import Question from "../components/Question.vue";
 import Header from "../components/Header.vue";
-//import Result from "../components/Result.vue";
+import Result from "../components/Result.vue";
 import { useRoute } from "vue-router";
 import { ref, computed } from "vue";
 import q from "../data/data.json";
@@ -35,18 +35,22 @@ const onOptionSelected = (isCorrect) => {
 
 <template>
   <div>
-    <Header :questionStatus="questionStatus" :barPercentage="barPercentage" />
+    <Header
+      v-if="!showResults"
+      :questionStatus="questionStatus"
+      :barPercentage="barPercentage"
+    />
     <div>
       <Question
         v-if="!showResults"
         :question="quiz.questions[currentQuestionIndex]"
         @selectOption="onOptionSelected"
       />
-      <!-- <Result
+      <Result
         v-else
         :quizQuestionLength="quiz.questions.length"
         :numberOfCorrectAnswers="numberOfCorrectAnswers"
-      /> -->
+      />
     </div>
   </div>
 </template>

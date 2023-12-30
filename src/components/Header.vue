@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mx-5 my-3">Question {{ questionStatus }}</h1>
-    <div class="bar border w-25 mx-5 my-3">
+    <div class="bar w-25 mx-5 my-3">
       <div class="completion" :style="{ width: barPercentage }"></div>
     </div>
   </div>
@@ -27,12 +27,12 @@ header h4 {
 
 .bar {
   height: 50px;
-  border: 3px solid bisque;
+  border: 2px solid lightblue;
 }
 
 .completion {
   height: 100%;
   width: 0%;
-  background-color: bisque;
+  background-color: lightblue;
 }
 </style>
